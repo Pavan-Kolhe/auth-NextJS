@@ -63,8 +63,8 @@ export default function Signup() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen ">
-      <div className="flex flex-col items-center justify-center h-100 w-80 py-6 border rounded-2xl ">
+    <div className="flex items-center justify-center min-h-screen  ">
+      <div className="flex flex-col items-center justify-center h-100 w-80 py-6 border rounded-2xl">
         <h1 className="bg-gradient-to-r from-blue-600 via-red-500 to-yellow-500 bg-clip-text text-transparent font-bold text-2xl m-3">
           {loading ? "Processing..." : "Signup"}
         </h1>

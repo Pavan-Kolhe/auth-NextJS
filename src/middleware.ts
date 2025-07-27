@@ -4,7 +4,11 @@ import { NextResponse } from "next/server";
 export function middleware(request: NextRequest) {
   const path = request.nextUrl.pathname;
   const isPublicPath =
-    path === "/login" || path === "/signup" || path === "/verifyemail";
+    path === "/login" ||
+    path === "/signup" ||
+    path === "/verifyemail" ||
+    path === "/verifypassword" ||
+    path === "/forgotpassword";
   const token = request.cookies.get("token")?.value || "";
 
   if (isPublicPath && token) {
@@ -17,7 +21,15 @@ export function middleware(request: NextRequest) {
 // matching paths
 
 export const config = {
-  matcher: ["/", "/signup", "/login", "/profile/:path*", "/verifyemail"],
+  matcher: [
+    "/",
+    "/signup",
+    "/login",
+    "/profile/:path*",
+    "/verifyemail",
+    "/verifypassword",
+    "/forgotpassword",
+  ],
 };
 
 // login and signup are public rest are protected
